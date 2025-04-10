@@ -25,7 +25,7 @@
       attribution: "© OpenStreetMap contributors"
     }).addTo(map);
 
-    fetch("https://geospatial-data-waterverse.opsi.lecce.it/algaemap/chl/ijsselmeer/algaemap-chl_wbl_ijsselmeer_20250320T104639.tif")
+    fetch("https://geoserver-waterverse.opsi.lecce.it/geoserver/waterverse/wms?service=WMS&version=1.1.0&request=GetMap&layers=waterverse%3Aalchl-ijsselmeer&bbox=5.103528337737754%2C52.527460210220596%2C5.842620916022244%2C52.855404497341446&width=768&height=340&srs=EPSG%3A4326&styles=&format=application/openlayers")
       .then(response => response.arrayBuffer())
       .then(arrayBuffer => {
         parseGeoraster(arrayBuffer).then(georaster => {
